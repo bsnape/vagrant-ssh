@@ -6,8 +6,8 @@ require 'vagrant/ssh/version'
 Gem::Specification.new do |spec|
   spec.name          = 'vagrant-ssh'
   spec.version       = Vagrant::SSH::VERSION
-  spec.authors       = ["Ben Snape"]
-  spec.email         = ["ben.snape@gmail.com"]
+  spec.authors       = ['Ben Snape']
+  spec.email         = ['ben.snape@gmail.com']
   spec.description   = %q{An easy way to execute SSH commands on your Vagrant image.}
   spec.summary       = %q{An easy way to execute SSH commands on your Vagrant image.}
   spec.homepage      = 'http://www.bensnape.com'
@@ -16,8 +16,9 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rspec'
 end
