@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'vagrant-ssh'
   spec.version       = Vagrant::SSH::VERSION
   spec.authors       = ['Ben Snape']
-  spec.email         = ['ben.snape@gmail.com']
+  spec.email         = ['bsnape@gmail.com']
   spec.description   = %q{An easy way to execute SSH commands on your Vagrant image.}
   spec.summary       = %q{An easy way to execute SSH commands on your Vagrant image.}
   spec.homepage      = 'http://www.bensnape.com'
