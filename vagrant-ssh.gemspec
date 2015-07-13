@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.description = 'An easy way to execute SSH commands on your Vagrant image.'
   spec.summary     = 'An easy way to execute SSH commands on your Vagrant image.'
   spec.homepage    = 'http://www.bensnape.com'
-  spec.license     = 'GNU'
+  spec.license     = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
