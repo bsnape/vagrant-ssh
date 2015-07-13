@@ -18,4 +18,4 @@ task :destroy_vm do
   p `vagrant destroy -f`
 end
 
-task :default => :spec
+task default: :spec

@@ -3,8 +3,8 @@ module VagrantSsh
     attr_reader :options
 
     def initialize(hostname, logger = Logger.new(STDOUT), options = {})
-      @options  = { :user     => 'vagrant',
-                    :password => 'vagrant' }.merge(options)
+      @options  = { user:     'vagrant',
+                    password: 'vagrant' }.merge(options)
       @user     = options[:user]
       @hostname = hostname
       @logger   = logger # left out of options so it does not conflict with Net::SSH own options hash
@@ -18,12 +18,12 @@ module VagrantSsh
       exit_code   = nil
       exit_signal = nil
       ssh.open_channel do |channel|
-        channel.exec(command) do |ch, success|
+        channel.exec(command) do |_ch, success|
           abort "FAILED: couldn't execute command: (#{command})" unless success
-          channel.on_data { |ch, data| stdout += data }
-          channel.on_extended_data { |ch, type, data| stderr += data }
-          channel.on_request('exit-status') { |ch, data| exit_code = data.read_long }
-          channel.on_request("exit-signal") { |ch, data| exit_signal = data.read_long }
+          channel.on_data { |_ch, data| stdout += data }
+          channel.on_extended_data { |_ch, _type, data| stderr += data }
+          channel.on_request('exit-status') { |_ch, data| exit_code = data.read_long }
+          channel.on_request('exit-signal') { |_ch, data| exit_signal = data.read_long }
         end
       end
       ssh.loop
