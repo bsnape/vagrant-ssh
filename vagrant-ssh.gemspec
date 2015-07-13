@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'vagrant/ssh/version'
+require 'vagrant-ssh/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'vagrant-ssh'
-  spec.version       = Vagrant::SSH::VERSION
+  spec.version       = VagrantSsh::VERSION
   spec.authors       = ['Ben Snape']
   spec.email         = ['bsnape@gmail.com']
   spec.description   = %q{An easy way to execute SSH commands on your Vagrant image.}
