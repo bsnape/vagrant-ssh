@@ -1,4 +1,4 @@
-# Vagrant::SSH
+# VagrantSsh
 
 An easy way to execute SSH commands on your Vagrant image.
 
