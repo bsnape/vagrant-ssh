@@ -4,26 +4,25 @@ An easy way to execute SSH commands on your Vagrant image.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add it to your application's Gemfile:
 
-    gem 'vagrant-ssh'
-
-And then execute:
-
-    $ bundle
+```bash
+gem 'vagrant-ssh'
+```
 
 Or install it yourself as:
 
-    $ gem install vagrant-ssh
+```bash
+$ gem install vagrant-ssh
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+To create an SSH connection to your Vagrant box:
 
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+```bash
+@ssh = VagrantSsh::Shell.new('33.33.33.33')
+@ssh.execute 'whoami'
+=> I, [2015-07-13T16:42:25.127602 #82100]  INFO -- : Executing SSH command: whoami
+=> I, [2015-07-13T16:42:25.142657 #82100]  INFO -- : vagrant
+```
