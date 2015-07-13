@@ -1,10 +1,7 @@
-Vagrant::Config.run do |config|
-  config.vm.box = 'precise32'
-  config.vm.box_url = 'http://files.vagrantup.com/precise32.box'
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
-  config.vm.network :hostonly, '33.33.33.33'
-  config.ssh.port = 22 # default SSH port
-
-  config.ssh.username = 'vagrant' # default username
-
+Vagrant.configure(2) do |config|
+  config.vm.box = 'hashicorp/precise32'
+  config.vm.network 'private_network', ip: '33.33.33.33'
 end
