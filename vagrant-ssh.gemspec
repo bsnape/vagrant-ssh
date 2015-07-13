@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email       = ['bsnape@gmail.com']
   spec.description = 'An easy way to execute SSH commands on your Vagrant image.'
   spec.summary     = 'An easy way to execute SSH commands on your Vagrant image.'
-  spec.homepage    = 'http://www.bensnape.com'
+  spec.homepage    = 'https://github.com/bsnape/vagrant-ssh'
   spec.license     = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
