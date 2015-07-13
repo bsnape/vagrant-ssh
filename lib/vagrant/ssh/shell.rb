@@ -1,23 +1,22 @@
 module Vagrant
-
   module SSH
-
     class Shell
+      attr_reader :options
 
       def initialize(hostname, logger = Logger.new(STDOUT), options = {})
-        @options = {:user => 'vagrant',
-                    :password => 'vagrant'}.merge(options)
-        @user = options[:user]
+        @options  = { :user     => 'vagrant',
+                      :password => 'vagrant' }.merge(options)
+        @user     = options[:user]
         @hostname = hostname
-        @logger = logger # left out of options so it does not conflict with Net::SSH own options hash
+        @logger   = logger # left out of options so it does not conflict with Net::SSH own options hash
       end
 
       def execute(command)
         ssh = Net::SSH.start(@hostname, @user, @options)
         @logger.info "Executing SSH command: #{command}"
-        stdout = ''
-        stderr = ''
-        exit_code = nil
+        stdout      = ''
+        stderr      = ''
+        exit_code   = nil
         exit_signal = nil
         ssh.open_channel do |channel|
           channel.exec(command) do |ch, success|
@@ -41,9 +40,6 @@ module Vagrant
 
         stdout # TODO: return everything instead of just stdout
       end
-
     end
-
   end
-
 end
