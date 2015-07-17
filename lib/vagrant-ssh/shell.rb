@@ -2,7 +2,7 @@ module VagrantSsh
   class Shell
     attr_reader :options
 
-    def initialize(hostname, logger = Logger.new(STDOUT), options = {})
+    def initialize(hostname, logger: Logger.new(STDOUT), options: {})
       @options  = { user:     'vagrant',
                     password: 'vagrant' }.merge(options)
       @user     = options[:user]

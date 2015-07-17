@@ -1,5 +1,5 @@
 describe VagrantSsh::Shell do
-  subject(:vagrant_ssh) { VagrantSsh::Shell.new(host, nil_logger) }
+  subject(:vagrant_ssh) { VagrantSsh::Shell.new(host, logger: nil_logger) }
 
   let(:credentials) { { user: 'vagrant', password: 'vagrant' } }
   let(:nil_logger) { Logger.new(nil) }
