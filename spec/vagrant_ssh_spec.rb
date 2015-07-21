@@ -22,4 +22,9 @@ describe VagrantSsh::Shell do
       expect(vagrant_ssh.options[:password]).to eq 'bar'
     end
   end
+
+  it 'provides the last exit code' do
+    vagrant_ssh.execute('exit 1')
+    expect(vagrant_ssh.exit_code).to eq 1
+  end
 end
