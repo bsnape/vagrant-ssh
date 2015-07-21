@@ -1,3 +1,5 @@
+require_relative 'spec_helper'
+
 describe VagrantSsh::Shell do
   subject(:vagrant_ssh) { VagrantSsh::Shell.new(host, logger: nil_logger) }
 
