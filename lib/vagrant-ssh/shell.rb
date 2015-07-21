@@ -5,7 +5,7 @@ module VagrantSsh
     def initialize(hostname, logger: Logger.new(STDOUT), options: {})
       @options  = { user:     'vagrant',
                     password: 'vagrant' }.merge(options)
-      @user     = options[:user]
+      @user     = @options[:user]
       @hostname = hostname
       @logger   = logger # left out of options so it does not conflict with Net::SSH own options hash
     end

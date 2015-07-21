@@ -12,4 +12,14 @@ describe VagrantSsh::Shell do
   it 'should interface with a Vagrant VM correctly' do
     expect(vagrant_ssh.execute('whoami').strip).to eq 'vagrant'
   end
+
+  context 'when modifying the defaults' do
+    let(:non_default_credentials) { { user: 'foo', password: 'bar' } }
+
+    it 'uses the provided credentials' do
+      vagrant_ssh = VagrantSsh::Shell.new(host, logger: nil_logger, options: non_default_credentials)
+      expect(vagrant_ssh.options[:user]).to eq 'foo'
+      expect(vagrant_ssh.options[:password]).to eq 'bar'
+    end
+  end
 end
